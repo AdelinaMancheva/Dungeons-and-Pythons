@@ -15,5 +15,4 @@ class Spell:
         return self._mana_cost
 
     def cast_range(self):
-        return this._cast_range
-
+        return self._cast_range

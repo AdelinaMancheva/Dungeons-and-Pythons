@@ -10,12 +10,12 @@ class Enemy:
         self._current_weapon = None
 
     def is_alive(self):
-        if self._health <=0:
+        if self._health <= 0:
             self._alive = False
         return self._alive
 
     def can_cast(self):
-        if self._mana <=0:
+        if self._mana <= 0:
             self._can_cast = False
         return self._can_cast
 
@@ -34,20 +34,18 @@ class Enemy:
         return True
 
     def take_mana(self, mana_points):
-        #cannot regenerate mana :)
         return
 
-    def attack(self, by = None):
-        if by == "weapon" and self._current_weapon!= None:
+    def attack(self, by=None):
+        if by == "weapon" and self._current_weapon is not None:
             return self._current_weapon.damage()
-        if by == "spell" and self._current_spell!= None:
+        if by == "magic" and self._current_spell is not None:
             return self._current_spell.damage()
         return self._damage
 
-
     def take_damage(self, damage_points):
         if damage_points <= self._health:
-            self._health -=damage_points
+            self._health -= damage_points
         else:
             self._health = 0
 
@@ -56,6 +54,3 @@ class Enemy:
 
     def learn(self, spell):
         self._current_spell = spell
-
-
-

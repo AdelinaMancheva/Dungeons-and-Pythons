@@ -6,6 +6,8 @@ class Enemy:
         self._damage = damage
         self._alive = True
         self._can_cast = True
+        self._current_spell = None
+        self._current_weapon = None
 
     def is_alive(self):
         if self._health <=0:
@@ -48,6 +50,12 @@ class Enemy:
             self._health -=damage_points
         else:
             self._health = 0
+
+    def equip(self, weapon):
+        self._current_weapon = weapon
+
+    def learn(self, spell):
+        self._current_spell = spell
 
 
 

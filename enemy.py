@@ -35,10 +35,19 @@ class Enemy:
         #cannot regenerate mana :)
         return
 
-    def attack(self):
-        pass
+    def attack(self, by = None):
+        if by == "weapon" and self._current_weapon!= None:
+            return self._current_weapon.damage()
+        if by == "spell" and self._current_spell!= None:
+            return self._current_spell.damage()
+        return self._damage
 
-    def take_damage(self):
-        pass
+
+    def take_damage(self, damage_points):
+        if damage_points <= self._health:
+            self._health -=damage_points
+        else:
+            self._health = 0
+
 
 

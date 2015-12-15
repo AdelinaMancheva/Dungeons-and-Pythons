@@ -18,3 +18,6 @@ class Weapon:
 
     def set_damage(self, damage):
         self.__damage = damage
+
+    def func(self):
+    	pass

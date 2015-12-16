@@ -1,3 +1,6 @@
+from weapon import Weapon
+
+
 class Hero:
 
     def __init__(self, name, title, health, start_health, mana, mana_rate):
@@ -90,4 +93,3 @@ class Hero:
 
     def attack(self, **kwargs):
         pass
-        

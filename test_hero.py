@@ -1,5 +1,6 @@
 import unittest
 from hero import Hero
+from weapon import Weapon
 
 
 class Test(unittest.TestCase):
@@ -36,6 +37,11 @@ class Test(unittest.TestCase):
     def test_hero_take_healing(self):
         self.h.take_damage(70)
         self.assertEqual(self.h.take_healing(20), 50)
+
+    def test_hero_equip(self):
+        w = Weapon("axe", 20)
+
+        self.assertEqual(self.h.equip(w), "Equipped with axe, damage: 20")
 
 if __name__ == '__main__':
     unittest.main()

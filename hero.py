@@ -86,7 +86,8 @@ class Hero:
         pass
 
     def equip(self, weapon):
-        pass
+        w = Weapon("axe", 20)
+        return "Equpped with {}, damage: {}".format(w.get_name(), w.get_damage())
 
     def learn_spell(self, spell):
         pass
